@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intruder Detection Alerts</title>
+  <link rel="stylesheet" type="text/css" href="/static/css/style_alert.css">
+  <!-- Add any additional stylesheets or CDN links here if needed -->
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="/static/logo.png" alt="Logo" width="200" height="100">
+    </div>
+    <div class="title">
+      <h1>Intruder Detection Alerts</h1>
+    </div>
+    <nav>
+        <ul>
+          <li><a href="webapp.html">AI-based Intruder Detection</a></li>
+          <li><a href="missions.html">Customizable Mission Planning</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="alerts.html">Real-time Alerts and Notifications</a></li>
+          <li><a href="https://flytbase.com" target="_blank">Live Data Visualization</a></li>
+
+        </ul>
+      </nav>
+  </header>
+  <main>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Alert Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for time in intruder_times %}
+        <tr>
+          <td>{{ time.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </main>
+
+  <!-- Add any additional content or styling here -->
+</body>
+</html>

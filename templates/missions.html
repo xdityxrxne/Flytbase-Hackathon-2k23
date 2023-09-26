@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission Planner</title>
+    <!-- Add any additional CSS stylesheets or CDN links here -->
+    <link rel="stylesheet" type="text/css" href="/static/css/style_missions.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCj_pf-LhdKl3n_CEsHmdlek-zro7_R_TE&callback=initMap" async defer></script>
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+              <a href="/"> <!-- Use "/" to navigate to the root URL (index.html) -->
+                <img src="/static/logo.png" alt="Logo" width="200" height="100">
+            </a>
+            </div>
+            <div class="title">
+              <h1>Welcome to Drone Perimeter Inspection Application</h1>
+            </div>
+            <nav>
+              <ul>
+                <li><a href="webapp.html">AI-based Intruder Detection</a></li>
+                <li><a href="missions.html">Customizable Mission Planning</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="alerts.html">Real-time Alerts and Notifications</a></li>
+                <li><a href="https://flytbase.com" target="_blank">Live Data Visualization</a></li>
+
+              </ul>
+            </nav>
+          </header>
+            <p>Welcome to the Missions Page!</p>
+            <!-- Add your content here -->
+            <div id="map"></div>
+            <script>
+              // Initialize the map
+              function initMap() {
+                // Define the map options (you can adjust these as needed)
+              // Define the map options (you can adjust these as needed)
+              var mapOptions = {
+                center: { lat: 18.5204, lng: 73.8567 }, // Set the initial map center coordinates
+                zoom: 12, // Set the initial zoom level
+              };
+
+            
+                // Create a new map object and associate it with the map container
+                var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+            
+                // Add additional map features, markers, and layers as needed
+              }
+            </script>
+            
+        </body>
+        </html>

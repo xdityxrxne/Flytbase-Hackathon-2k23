@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOLO Web App</title>
+    <!-- Add any additional CSS stylesheets or CDN links here -->
+    <link rel="stylesheet" type="text/css" href="/static/css/style_yolo.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+              <a href="/"> <!-- Use "/" to navigate to the root URL (index.html) -->
+                <img src="/static/logo.png" alt="Logo" width="200" height="100">
+            </a>
+            </div>
+            <div class="title">
+              <h1>Welcome to Drone Perimeter Inspection Application</h1>
+            </div>
+            <nav>
+              <ul>
+                <li><a href="webapp.html">AI-based Intruder Detection</a></li>
+                <li><a href="missions.html">Customizable Mission Planning</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="alerts.html">Real-time Alerts and Notifications</a></li>
+                <li><a href="https://flytbase.com" target="_blank">Live Data Visualization</a></li>
+
+              </ul>
+            </nav>
+          </header>
+
+
+<form class="form-signin col-1g-3" method="POST" enctype="multipart/form-data" action="/webapp.html">
+
+
+    <h1 class="h3 mb-3 font-weight-normal">Select Drone Location</h1>
+    <input type="file" name="file" class="form-control-file" id="inputfile" >
+    
+    <br/>
+    <button class="btn btn-block btn-default btn-sm" type="submit">Select</button>
+    
+    <p class="mt-5 mb-3 text-muted">Application by SkySurge. All rights reserved.</p>
+    </form>
+
+<!-- Add this code to display the detected image -->
+{% if image_path %}
+<div class="image-container">
+    <img src="{{ url_for('display', filename=image_path) }}" alt="Detected Image">
+</div>
+{% endif %}
+
+<!-- Add this code to display the intruder status with inline styles -->
+{% if intruder %}
+<div style="font-weight: bold; {% if intruder == 'INTRUDER DETECTED' %}color: red;{% else %}color: green;{% endif %}">
+    {{ intruder }}
+</div>
+{% endif %}
+
+    <!-- Add any additional JavaScript scripts or CDN links here -->
+</body>
+</html>
+
+
+
